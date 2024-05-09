@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model users {
+  id String @id @default(cuid())
+  profile_id String @unique // Mark profile_id as unique
+  full_name String
+  email String?
+  access_token String?
+  refresh_token String?
+  createDate DateTime @default(now())
+  updateDate DateTime @updatedAt
+}
