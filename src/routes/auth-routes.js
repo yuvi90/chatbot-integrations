@@ -18,8 +18,8 @@ router.get(
     scope: [
       "email",
       "pages_show_list",
-      "pages_manage_metadata",
-      "pages_messaging",
+      // "pages_manage_metadata",
+      // "pages_messaging",
     ],
   })
 );

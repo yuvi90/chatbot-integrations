@@ -17,6 +17,7 @@ app.use(
   })
 );
 
+app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -29,6 +30,9 @@ app.use("/auth", authRoutes);
 
 const dashboardRoutes = require("./routes/dashboard-routes");
 app.use("/dashboard", dashboardRoutes);
+
+const webhookRoutes = require("./routes/webhook-routes");
+app.use("/webhook", webhookRoutes);
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
