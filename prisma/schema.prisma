@@ -8,12 +8,12 @@ datasource db {
 }
 
 model users {
-  id String @id @default(cuid())
-  profile_id String @unique // Mark profile_id as unique
-  full_name String
-  email String?
-  access_token String?
+  id            String   @id @default(cuid())
+  profile_id    String   @unique // Mark profile_id as unique
+  full_name     String
+  email         String?
+  access_token  String?
   refresh_token String?
-  createDate DateTime @default(now())
-  updateDate DateTime @updatedAt
+  createDate    DateTime @default(now())
+  updateDate    DateTime @updatedAt
 }
